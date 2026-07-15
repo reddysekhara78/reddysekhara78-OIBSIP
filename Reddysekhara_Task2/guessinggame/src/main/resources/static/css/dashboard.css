@@ -1,0 +1,94 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#4f46e5,#06b6d4);
+    min-height:100vh;
+}
+
+/* Navbar */
+
+.navbar{
+    padding:15px 40px;
+}
+
+.navbar-brand{
+    font-size:28px;
+    font-weight:bold;
+}
+
+/* Dashboard */
+
+.dashboard-container{
+    max-width:1400px;
+    margin:40px auto;
+    padding:20px;
+}
+
+/* Statistics Cards */
+
+.stats-card{
+    border:none;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+    transition:.3s;
+}
+
+.stats-card:hover{
+    transform:translateY(-6px);
+}
+
+.stats-card .card-body{
+    padding:30px;
+}
+
+.stats-card h5{
+    font-size:18px;
+    color:#666;
+}
+
+.stats-card h2{
+    font-size:40px;
+    font-weight:bold;
+}
+
+/* Chart */
+
+.chart-card{
+    border:none;
+    border-radius:18px;
+    margin-top:35px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+/* Table */
+
+.history-card{
+    border:none;
+    border-radius:18px;
+    margin-top:35px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.table th{
+    text-align:center;
+}
+
+.table td{
+    text-align:center;
+    vertical-align:middle;
+}
+
+.badge{
+    font-size:14px;
+    padding:8px 15px;
+}
+
+.card-header{
+    font-size:22px;
+    font-weight:bold;
+}
