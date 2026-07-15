@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Booking Successful</title>
+</head>
+
+<body>
+
+<h1>Ticket Booked Successfully</h1>
+
+<h2>Your PNR:</h2>
+
+<h1 th:text="${reservation.pnr}"></h1>
+
+<p>Passenger :
+    <span th:text="${reservation.passengerName}"></span>
+</p>
+
+<p>Train :
+    <span th:text="${reservation.trainName}"></span>
+</p>
+
+<p>Journey Date :
+    <span th:text="${reservation.journeyDate}"></span>
+</p>
+
+<a href="/dashboard">
+    Go to Dashboard
+</a>
+
+</body>
+
+</html>

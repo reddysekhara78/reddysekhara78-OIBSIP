@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Register</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <style>
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:linear-gradient(-45deg,#0f172a,#1d4ed8,#2563eb,#06b6d4);
+
+background-size:400% 400%;
+
+animation:bgMove 12s ease infinite;
+
+overflow:hidden;
+
+}
+
+@keyframes bgMove{
+
+0%{background-position:0% 50%;}
+
+50%{background-position:100% 50%;}
+
+100%{background-position:0% 50%;}
+
+}
+
+.background{
+
+position:fixed;
+
+width:100%;
+
+height:100%;
+
+overflow:hidden;
+
+z-index:-1;
+
+}
+
+.circle{
+
+position:absolute;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.12);
+
+animation:float 10s infinite ease-in-out;
+
+}
+
+.c1{
+
+width:230px;
+height:230px;
+
+top:-70px;
+left:-60px;
+
+}
+
+.c2{
+
+width:170px;
+height:170px;
+
+bottom:50px;
+right:80px;
+
+animation-delay:2s;
+
+}
+
+.c3{
+
+width:120px;
+height:120px;
+
+top:220px;
+right:250px;
+
+animation-delay:4s;
+
+}
+
+@keyframes float{
+
+50%{
+
+transform:translateY(-30px);
+
+}
+
+}
+
+.container{
+
+width:100%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:30px;
+
+}
+
+.register-card{
+
+width:500px;
+
+background:rgba(255,255,255,.16);
+
+backdrop-filter:blur(20px);
+
+border-radius:25px;
+
+padding:35px;
+
+box-shadow:0 10px 35px rgba(0,0,0,.35);
+
+color:white;
+
+animation:fadeUp .8s ease;
+
+}
+
+.logo{
+
+font-size:60px;
+
+text-align:center;
+
+margin-bottom:10px;
+
+}
+
+.register-card h2{
+
+text-align:center;
+
+font-weight:700;
+
+margin-bottom:5px;
+
+}
+
+.subtitle{
+
+text-align:center;
+
+margin-bottom:30px;
+
+opacity:.9;
+
+}
+
+.input-box{
+
+margin-bottom:18px;
+
+}
+
+.input-box label{
+
+display:block;
+
+margin-bottom:8px;
+
+font-weight:600;
+
+}
+
+.form-control{
+
+height:50px;
+
+border:none;
+
+border-radius:12px;
+
+padding-left:15px;
+
+font-size:15px;
+
+}
+
+.form-control:focus{
+
+box-shadow:0 0 0 .25rem rgba(255,255,255,.25);
+
+}
+
+.password-box{
+
+display:flex;
+
+align-items:center;
+
+background:white;
+
+border-radius:12px;
+
+overflow:hidden;
+
+}
+
+.password-box input{
+
+border:none;
+
+box-shadow:none;
+
+}
+
+.password-box span{
+
+padding:0 15px;
+
+cursor:pointer;
+
+font-size:20px;
+
+color:#2563eb;
+
+}
+
+#strengthText{
+
+display:block;
+
+margin-top:8px;
+
+font-weight:600;
+
+}
+
+#matchText{
+
+display:block;
+
+margin-top:6px;
+
+font-weight:600;
+
+}
+
+.terms{
+
+margin:20px 0;
+
+font-size:14px;
+
+}
+
+.terms input{
+
+margin-right:8px;
+
+}
+
+.register-btn{
+
+width:100%;
+
+height:52px;
+
+border:none;
+
+border-radius:15px;
+
+background:linear-gradient(135deg,#f59e0b,#f97316);
+
+color:white;
+
+font-size:18px;
+
+font-weight:700;
+
+transition:.3s;
+
+}
+
+.register-btn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 12px 25px rgba(0,0,0,.3);
+
+}
+
+.login-link{
+
+text-align:center;
+
+margin-top:20px;
+
+}
+
+.login-link a{
+
+color:#fff;
+
+font-weight:700;
+
+text-decoration:none;
+
+}
+
+.login-link a:hover{
+
+text-decoration:underline;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.register-card{
+
+width:95%;
+
+padding:25px;
+
+}
+
+}
+
+</style>
+       
+
+   
+
+</head>
+</head>
+<body>
+
+<div class="background">
+    <div class="circle c1"></div>
+    <div class="circle c2"></div>
+    <div class="circle c3"></div>
+</div>
+
+<div class="container">
+
+    <div class="register-card">
+
+        <div class="logo">
+            🚆
+        </div>
+
+        <h2>Create Your Account</h2>
+
+        <p class="subtitle">
+            Join the Online Railway Reservation System
+        </p>
+
+        <form action="/register"
+              method="post"
+              th:object="${user}">
+
+            <!-- Full Name -->
+
+            <div class="input-box">
+
+                <label>👤 Full Name</label>
+
+                <input type="text"
+                       id="fullName"
+                       class="form-control"
+                       th:field="*{fullName}"
+                       placeholder="Enter your full name"
+                       required>
+
+            </div>
+
+            <!-- Email -->
+
+            <div class="input-box">
+
+                <label>📧 Email Address</label>
+
+                <input type="email"
+                       id="email"
+                       class="form-control"
+                       th:field="*{email}"
+                       placeholder="Enter your email"
+                       required>
+
+            </div>
+
+            <!-- Mobile -->
+
+            <div class="input-box">
+
+                <label>📱 Mobile Number</label>
+
+                <input type="text"
+                       id="mobile"
+                       class="form-control"
+                       th:field="*{mobile}"
+                       maxlength="10"
+                       placeholder="Enter 10-digit mobile number"
+                       required>
+
+            </div>
+
+            <!-- Password -->
+
+            <div class="input-box">
+
+                <label>🔒 Password</label>
+
+                <div class="password-box">
+
+                    <input type="password"
+                           id="password"
+                           class="form-control"
+                           th:field="*{password}"
+                           placeholder="Create password"
+                           required>
+
+                    <span onclick="togglePassword()">
+
+                        👁️
+
+                    </span>
+
+                </div>
+
+                <small id="strengthText">
+                    Password Strength
+                </small>
+
+            </div>
+
+            <!-- Confirm Password -->
+
+            <div class="input-box">
+
+                <label>🔐 Confirm Password</label>
+
+                <input type="password"
+                       id="confirmPassword"
+                       class="form-control"
+                       placeholder="Confirm password"
+                       required>
+
+                <small id="matchText"></small>
+
+            </div>
+
+            <!-- Terms -->
+
+            <div class="terms">
+
+                <input type="checkbox"
+                       required>
+
+                I agree to the Terms & Conditions
+
+            </div>
+
+            <!-- Button -->
+
+            <button type="submit"
+                    class="register-btn">
+
+                🚆 Create Account
+
+            </button>
+
+        </form>
+
+        <div class="login-link">
+
+            Already have an account?
+
+            <a href="/">
+
+                Login
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+<script>
+
+// ===========================
+// Show / Hide Password
+// ===========================
+
+function togglePassword(){
+
+    let password=document.getElementById("password");
+
+    if(password.type==="password"){
+
+        password.type="text";
+
+    }
+    else{
+
+        password.type="password";
+
+    }
+
+}
+
+
+// ===========================
+// Password Strength
+// ===========================
+
+let password=document.getElementById("password");
+
+password.addEventListener("keyup",function(){
+
+    let value=password.value;
+
+    let strength=document.getElementById("strengthText");
+
+    if(value.length<6){
+
+        strength.innerHTML="🔴 Weak Password";
+
+        strength.style.color="#ff4d4d";
+
+    }
+
+    else if(value.length<10){
+
+        strength.innerHTML="🟡 Medium Password";
+
+        strength.style.color="#ffd43b";
+
+    }
+
+    else{
+
+        strength.innerHTML="🟢 Strong Password";
+
+        strength.style.color="#51cf66";
+
+    }
+
+});
+
+
+// ===========================
+// Confirm Password
+// ===========================
+
+let confirmPassword=document.getElementById("confirmPassword");
+
+confirmPassword.addEventListener("keyup",function(){
+
+    let msg=document.getElementById("matchText");
+
+    if(confirmPassword.value===""){
+
+        msg.innerHTML="";
+
+        return;
+
+    }
+
+    if(password.value===confirmPassword.value){
+
+        msg.innerHTML="✅ Passwords Match";
+
+        msg.style.color="#51cf66";
+
+    }
+
+    else{
+
+        msg.innerHTML="❌ Passwords Do Not Match";
+
+        msg.style.color="#ff4d4d";
+
+    }
+
+});
+
+
+// ===========================
+// Mobile Validation
+// ===========================
+
+let mobile=document.getElementById("mobile");
+
+mobile.addEventListener("input",function(){
+
+    this.value=this.value.replace(/[^0-9]/g,"").slice(0,10);
+
+});
+
+
+// ===========================
+// Name Validation
+// ===========================
+
+let fullName=document.getElementById("fullName");
+
+fullName.addEventListener("input",function(){
+
+    this.value=this.value.replace(/[^a-zA-Z ]/g,"");
+
+});
+
+
+// ===========================
+// Email Validation
+// ===========================
+
+let email=document.getElementById("email");
+
+email.addEventListener("blur",function(){
+
+    let regex=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if(this.value!="" && !regex.test(this.value)){
+
+        alert("Please enter a valid email address.");
+
+        this.focus();
+
+    }
+
+});
+
+
+// ===========================
+// Submit Validation
+// ===========================
+
+document.querySelector("form").addEventListener("submit",function(e){
+
+    if(password.value!==confirmPassword.value){
+
+        alert("Passwords do not match.");
+
+        e.preventDefault();
+
+        return;
+
+    }
+
+    if(mobile.value.length!==10){
+
+        alert("Mobile number must contain exactly 10 digits.");
+
+        e.preventDefault();
+
+        return;
+
+    }
+
+    let btn=document.querySelector(".register-btn");
+
+    btn.disabled=true;
+
+    btn.innerHTML=`
+    <span class="spinner-border spinner-border-sm"></span>
+    Creating Account...
+    `;
+
+});
+
+</script>
+</body>
+</html>

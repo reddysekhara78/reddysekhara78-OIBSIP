@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<div th:fragment="navbar">
+
+<nav class="navbar navbar-light bg-white shadow-sm px-4">
+
+<h4 class="mb-0">
+
+Dashboard
+
+</h4>
+
+<div>
+
+<button class="btn btn-light">
+
+<i class="bi bi-bell"></i>
+
+</button>
+
+<button class="btn btn-light">
+
+<i class="bi bi-moon"></i>
+
+</button>
+
+<span class="ms-3 fw-bold"
+      th:text="${user.fullName}">
+</span>
+
+</div>
+
+</nav>
+
+</div>
+
+</body>
+</html>

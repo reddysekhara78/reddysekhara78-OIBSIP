@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<div th:fragment="sidebar">
+
+    <div class="sidebar">
+
+        <h2 class="logo">
+            <i class="bi bi-bank"></i>
+            Smart ATM
+        </h2>
+
+        <ul>
+
+            <li>
+                <a th:href="@{/dashboard}">
+                    <i class="bi bi-speedometer2"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a th:href="@{/deposit}">
+                    <i class="bi bi-wallet2"></i>
+                    Deposit
+                </a>
+            </li>
+
+            <li>
+                <a th:href="@{/withdraw}">
+                    <i class="bi bi-cash-stack"></i>
+                    Withdraw
+                </a>
+            </li>
+
+            <li>
+                <a th:href="@{/transfer}">
+                    <i class="bi bi-arrow-left-right"></i>
+                    Transfer
+                </a>
+            </li>
+
+            <li>
+                <a th:href="@{/transactions}">
+                    <i class="bi bi-clock-history"></i>
+                    Transactions
+                </a>
+            </li>
+
+            <li>
+                <a th:href="@{/profile}">
+                    <i class="bi bi-person-circle"></i>
+                    Profile
+                </a>
+            </li>
+
+            <li>
+                <a th:href="@{/logout}">
+                    <i class="bi bi-box-arrow-right"></i>
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</div>
+
+</body>
+</html>
